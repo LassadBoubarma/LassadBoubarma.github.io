@@ -71,22 +71,7 @@ export const projects = [
     flow: ['Capture notes', 'Build a playlist', 'Review & recall'],
   },
   {
-    id: 'exploration-of-tunis', number: '05', category: 'software', type: 'PERSONAL TOOL / EXPLORATION', title: 'Exploration of Tunis',
-    fullTitle: 'Exploration of Tunis',
-    summary: 'Remember the places, the experiences and whether they were worth revisiting.',
-    description: 'A personal place tracker for exploring Tunisia. I use it to remember where I have been, record my own ratings, and decide what to revisit or try next.',
-    tags: ['Personal project', 'Place tracking'],
-    context: 'Built for personal use',
-    features: [
-      ['Remember visits', 'Keep a record of places already visited in Tunisia.'],
-      ['Record personal ratings', 'Capture how worthwhile each experience felt instead of relying on memory.'],
-      ['Explore with context', 'Use past experiences to help decide where to return and what to try next.'],
-    ],
-    contribution: 'I created this tool for my own exploration of Tunisia: a place to keep visited locations and personal ratings together.',
-    flow: ['Visit a place', 'Record a rating', 'Plan what is next'],
-  },
-  {
-    id: 'orange-vr-museum', number: '06', category: 'software', type: 'UNITY / VIRTUAL EXPERIENCE', title: 'Orange VR Museum',
+    id: 'orange-vr-museum', number: '05', category: 'software', type: 'UNITY / VIRTUAL EXPERIENCE', title: 'Orange VR Museum',
     fullTitle: 'Orange VR Museum',
     summary: 'Turn a collection of projects into a place you can explore.',
     description: 'An interactive 3D museum built in Unity to present Orange projects through an explorable virtual environment.',
@@ -104,7 +89,7 @@ export const projects = [
 
 export const gameDevProjects = [
   {
-    id: 'cube-counting', number: '07', category: 'gamedev', type: 'GAMEDEV / COMPETITIVE GAME', title: 'Cube Counting',
+    id: 'cube-counting', number: '06', category: 'gamedev', type: 'GAMEDEV / COMPETITIVE GAME', title: 'Cube Counting',
     fullTitle: 'Cube Counting Competition',
     summary: 'Count fast, compete with other players and be the one winner.',
     description: 'A competitive multiplayer game where players race to count cubes as quickly as possible, with one player winning the competition. Pets, gacha mechanics and customisation add another layer to the experience.',
@@ -119,7 +104,7 @@ export const gameDevProjects = [
     flow: ['Count the cubes', 'Compete for the win', 'Customise & collect'],
   },
   {
-    id: 'isekai-adventure', number: '08', category: 'gamedev', type: 'GAMEDEV / ADVENTURE RPG', title: 'Isekai Adventure',
+    id: 'isekai-adventure', number: '07', category: 'gamedev', type: 'GAMEDEV / ADVENTURE RPG', title: 'Isekai Adventure',
     fullTitle: 'Isekai Adventure RPG',
     summary: 'Choose a class and explore a world of zones, mounts and adventure.',
     description: 'An isekai-inspired adventure RPG built with Luau around character classes, explorable zones and mounts.',
