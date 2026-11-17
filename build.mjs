@@ -1,5 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
+import { createHash } from 'node:crypto';
 import { profile, projects, robloxGames } from './content.mjs';
 
 const root = path.dirname(new URL(import.meta.url).pathname.replace(/^\/(\w:)/, '$1'));
@@ -40,5 +41,19 @@ const languageSection="<section class=\"section language-section\"><p class=\"ey
 const about=`<section class="page-intro about-intro"><a class="back-link" href="/">Home</a><p class="eyebrow">A LITTLE ABOUT ME</p><h1>Curiosity meets<br><span>engineering.</span></h1><p>I’m Lassaad, a software engineering student based in Tunisia.</p></section><section class="section about-grid"><div><p class="eyebrow">MY BACKGROUND</p><h2>Useful software.<br>Room to explore.</h2></div><div class="about-story"><p>I study software engineering at MedTech, South Mediterranean University, and expect to graduate in June 2027. I build web and mobile applications, AI tools, and interactive experiences in Unity and Roblox.</p><p>My preferred direction is Cloud and AI. My projects often start with a practical need: finding answers in documents, making spreadsheets easier to use, organizing study notes, or remembering places I have explored. Games give me another space to experiment with interaction and world-building.</p><p>Through internships at Ooredoo and FORVIA, I have gained experience in software development and automated testing. I’m looking for a six-month final-year project or internship from January to June 2027.</p><a class="button secondary" href="/assets/Lassaad_Boubarma_CV.pdf" download>Download my CV</a></div></section><section class="section experience-section"><div class="section-heading"><div><p class="eyebrow">EXPERIENCE</p><h2>Learning through building.</h2></div></div><div class="experience-row"><span class="experience-date">JUN–AUG 2025</span><div><h3>Software Development Intern</h3><p class="experience-company">Ooredoo Tunisia</p><p>Built a React and Spring Boot dashboard for spreadsheet exploration, filtering and PDF reporting.</p><a class="text-link" href="/projects/ooredoo-dashboard/">Explore the project</a></div></div><div class="experience-row"><span class="experience-date">JUL 2023 · 3 WEEKS</span><div><h3>Software Testing Intern</h3><p class="experience-company">FORVIA Tunisia</p><p>Wrote and executed Selenium tests, developed C testing utilities, and documented validation results.</p></div></div><div class="experience-row"><span class="experience-date">EXPECTED JUN 2027</span><div><h3>Software Engineering</h3><p class="experience-company">MedTech · South Mediterranean University</p></div></div></section><section class="section skill-section"><p class="eyebrow">TOOLKIT</p><h2>What I work with.</h2><div class="skill-grid">${[['Technical languages','Python · Java · C · JavaScript · TypeScript · SQL · Luau'],['Web & mobile','React · React Native · Vue.js · Express.js · Spring Boot'],['AI & data','RAG · SentenceTransformers · Ollama · Streamlit · Firebase · Supabase'],['Games & testing','Unity · Roblox · Git · Selenium · Postman']].map(([t,s])=>`<div><h3>${t}</h3><p>${s}</p></div>`).join('')}</div></section>${languageSection}${contact}`;
 write('about',layout('About','Get to know Lassaad Boubarma: software engineering student, AI and web developer, and game creator based in Tunisia.','about',about));
 fs.writeFileSync(path.join(out,'404.html'),layout('Page not found','This page could not be found.','',`<section class="page-intro"><p class="eyebrow">404 / PAGE NOT FOUND</p><h1>A different path.</h1><p>The page you are looking for is not here.</p><a class="button primary" href="/">Return to portfolio</a></section>`));
-console.log('Portfolio HTML generated.');
+// Fingerprinted filenames keep browser/CDN caches from mixing releases.
+const assets=path.join(out,'assets');
+const digest=bytes=>createHash('sha256').update(bytes).digest('hex').slice(0,12);
+const image=fs.readFileSync(path.join(assets,'crystalline-hero.webp'));
+const imageName=`crystalline-hero.${digest(image)}.webp`;
+fs.writeFileSync(path.join(assets,imageName),image);
+const css=fs.readFileSync(path.join(assets,'style.css'),'utf8').replaceAll('/assets/crystalline-hero.webp',`/assets/${imageName}`);
+const cssName=`style.${digest(css)}.css`;
+fs.writeFileSync(path.join(assets,cssName),css);
+const js=fs.readFileSync(path.join(assets,'app.js'));
+const jsName=`app.${digest(js)}.js`;
+fs.writeFileSync(path.join(assets,jsName),js);
+function fingerprintPages(dir){for(const entry of fs.readdirSync(dir,{withFileTypes:true})){const file=path.join(dir,entry.name);if(entry.isDirectory())fingerprintPages(file);else if(entry.name.endsWith('.html')){const html=fs.readFileSync(file,'utf8').replaceAll('/assets/style.css',`/assets/${cssName}`).replaceAll('/assets/app.js',`/assets/${jsName}`);fs.writeFileSync(file,html);}}}
+fingerprintPages(out);
+console.log(`Portfolio generated with versioned assets: ${cssName}, ${jsName}, ${imageName}`);
 
