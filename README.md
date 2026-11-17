@@ -2,7 +2,7 @@
 
 Responsive static portfolio with an original sci-fi interface inspired by the translucent menus, radial status displays and blue selection states of Final Fantasy VII Rebirth. The site uses original artwork and CSS UI motifs; it does not copy game assets.
 
-Includes Home, Web, Software & AI, GameDev, About, seven project detail pages and a 404 page. The game-development section is available at `/gamedev/`.
+Includes Home, Web, Software & AI, GameDev, About, ten project detail pages and a 404 page. The game-development section is available at `/gamedev/`.
 
 ## Editing
 

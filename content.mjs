@@ -85,6 +85,56 @@ export const projects = [
     contribution: 'I developed the Unity museum environment and structured the project content into an interactive showcase.',
     flow: ['Enter the museum', 'Explore the projects', 'Discover initiatives'],
   },
+{
+  "id": "librarian-rag",
+  "number": "07",
+  "category": "software",
+  "type": "AI / DOCUMENTATION",
+  "title": "LibrarianRAG",
+  "summary": "Ask questions about Python and get answers with sources.",
+  "description": "A question-answering app that searches Python documentation and gives a short answer with the original source passage.",
+  "tags": [
+    "Python",
+    "RAG",
+    "Ollama"
+  ],
+  "repo": "https://github.com/LassadBoubarma/LibrarianRAG",
+  "simple": true
+},
+
+{
+  "id": "sql-explanation-grader",
+  "number": "08",
+  "category": "software",
+  "type": "AI / SQL LEARNING",
+  "title": "SQL Explanation Grader",
+  "summary": "Explain SQL queries in plain language and check the explanations.",
+  "description": "A tool that uses local AI models to explain SQLite SELECT queries, grade the explanations and show feedback.",
+  "tags": [
+    "Python",
+    "SQLite",
+    "Ollama"
+  ],
+  "repo": "https://github.com/BLACK2202/sql-explanation-grader",
+  "simple": true
+},
+
+{
+  "id": "operator",
+  "number": "09",
+  "category": "software",
+  "type": "AI / SUPPORT TOOLS",
+  "title": "The Operator",
+  "summary": "Review support tickets and suggest the next action.",
+  "description": "An AI assistant that checks support tickets, customer history and policies. It asks for human approval before making changes in a test environment.",
+  "tags": [
+    "Python",
+    "SQLite",
+    "AI agents"
+  ],
+  "repo": "https://github.com/RamiRlahi/Operator",
+  "simple": true
+},
 ];
 
 export const gameDevProjects = [
