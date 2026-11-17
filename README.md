@@ -2,7 +2,7 @@
 
 Responsive static portfolio with an original sci-fi interface inspired by the translucent menus, radial status displays and blue selection states of Final Fantasy VII Rebirth. The site uses original artwork and CSS UI motifs; it does not copy game assets.
 
-Includes Home, Web, Software & AI, GameDev, About, eight project detail pages and a 404 page. The game-development section is available at `/gamedev/`.
+Includes Home, Web, Software & AI, GameDev, About, seven project detail pages and a 404 page. The game-development section is available at `/gamedev/`.
 
 ## Editing
 
@@ -17,7 +17,7 @@ Pages and links work without JavaScript; scripting enhances transitions, the mob
 
 ## Content notes
 
-RAG, Ooredoo and notebook details were checked against public GitHub source in the earlier project pass. WorkHive and Unity descriptions come from the CV. GameDev descriptions come from the user. Cube Counting and Isekai Adventure are descriptive labels pending official names, links and media. No release status or player numbers are claimed. The CV remains separate from the GameDev section.
+RAG, Ooredoo and notebook details were checked against public GitHub source in the earlier project pass. WorkHive and Unity descriptions come from the CV. GameDev descriptions come from the user. Cube Counting is a descriptive label pending official names, links and media. No release status or player numbers are claimed. The CV remains separate from the GameDev section.
 
 ## Hosting
 

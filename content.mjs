@@ -103,19 +103,4 @@ export const gameDevProjects = [
     contribution: 'I developed the game using Luau, bringing together competitive cube-counting gameplay, pets, gacha mechanics and customisation.',
     flow: ['Count the cubes', 'Compete for the win', 'Customise & collect'],
   },
-  {
-    id: 'isekai-adventure', number: '07', category: 'gamedev', type: 'GAMEDEV / ADVENTURE RPG', title: 'Isekai Adventure',
-    fullTitle: 'Isekai Adventure RPG',
-    summary: 'Choose a class and explore a world of zones, mounts and adventure.',
-    description: 'An isekai-inspired adventure RPG built with Luau around character classes, explorable zones and mounts.',
-    tags: ['GameDev', 'Luau', 'RPG'],
-    context: 'Adventure game development project',
-    features: [
-      ['Choose your class', 'Character classes are a central part of the role-playing experience.'],
-      ['Explore different zones', 'The adventure spans multiple zones within the game world.'],
-      ['Travel with mounts', 'Mounts form part of the exploration and adventure systems.'],
-    ],
-    contribution: 'I developed this adventure RPG using Luau, with systems for classes, mounts and zones.',
-    flow: ['Choose a class', 'Explore the zones', 'Ride into adventure'],
-  },
 ];
